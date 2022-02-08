@@ -1,0 +1,36 @@
+.email-confirmation {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+.email-confirmation h1 {
+  font-size: 3rem;
+  color: rgb(59, 59, 59);
+}
+.email-confirmation a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--main-font-color);
+  color: white;
+  padding: 5px 20px;
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 3px;
+}
+.email-confirmation a:hover {
+  background-color: rgb(63, 63, 148);
+}
+.error-message {
+  color: rgb(255, 101, 101);
+  background-color: rgb(255, 232, 232);
+  padding: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .email-confirmation {
+    left: 10px;
+    top: 80px;
+  }
+  .email-confirmation h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,36 @@
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outer-loading {
+  width: 8%;
+  height: 10px;
+  background-color: var(--main-font-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 1px 1px grey;
+  position: relative;
+  overflow: hidden;
+}
+.outer-loading > div {
+  width: 40%;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  height: 8px;
+  animation: move 0.4s infinite;
+  position: absolute;
+}
+@keyframes move {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: 100%;
+  }
+}

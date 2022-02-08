@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+:root {
+  --main-font-color: rgb(87, 87, 216);
+  --background-color: rgb(248, 248, 255);
+  background-color: var(--background-color);
+}
+body {
+  overflow-x: hidden;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.intro {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.intro > div:nth-child(2) {
+  width: 40vw;
+}
+.intro h1 {
+  font-size: 2.5rem;
+  color: rgb(49, 49, 49);
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  font-size: 2.8rem;
+  text-shadow: 3px 3px 5px rgb(153, 153, 153);
+}
+.intro span {
+  color: var(--main-font-color);
+}
+.intro img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.intro > div:nth-child(1) p {
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  letter-spacing: 1px;
+  color: rgb(56, 56, 56) y;
+}
+
+.intro a {
+  text-decoration: none;
+  color: black;
+  background-color: var(--main-font-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+.intro a:hover {
+  background-color: rgb(63, 63, 153);
+}
+
+@media screen and (max-width: 900px) {
+  .intro > div:nth-child(2) {
+    display: none;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 500px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+  .intro > div:nth-child(1) p {
+    font-size: 0.8rem;
+    letter-spacing: 0px;
+  }
+  .intro a {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,5 @@
+intro - [ registerLink, loginLink ]
+register - [ form  ]
+emailConfirmed - [ login ]
+login - [ form ]
+// npm i express mongoose dotenv nodemon cors bcryptjs crypto express-async-error htt

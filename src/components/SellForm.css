@@ -1,0 +1,104 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 5rem;
+}
+.form-container h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+.form-container form {
+  width: 550px;
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8rem;
+}
+.form-container form > div {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+.form-container input,
+.form-container textarea,
+.form-container select {
+  font-size: 1.1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 0.5px 0.5px grey;
+  padding: 10px 15px;
+}
+.form-container form div label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+  box-shadow: 0px 0px 1px 1px var(--main-font-color);
+  background-color: rgb(248, 248, 255);
+}
+.form-container textarea {
+  resize: none;
+}
+.form-container button {
+  background-color: var(--main-font-color);
+  color: white;
+  padding: 5px 25px;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  border: none;
+  outline: none;
+}
+.form-container button:hover {
+  background-color: rgb(46, 46, 117);
+}
+.post-message {
+  width: 550px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.backward {
+  position: fixed;
+  top: 6rem;
+  left: 1rem;
+  color: var(--main-font-color);
+  font-size: 2rem;
+}
+@media screen and (max-width: 600px) {
+  .form-container h1 {
+    font-size: 1.1rem;
+  }
+  .form-container form {
+    width: 100%;
+  }
+  .form-container {
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+  .form-container form > div:nth-child(3) input {
+    margin: 8px 0;
+  }
+  .backward {
+    top: 0rem;
+    left: 0.3rem;
+    font-size: 1.5rem;
+  }
+  .post-message {
+    width: 100%;
+  }
+}

@@ -1,0 +1,107 @@
+.login-form,
+.forgotpassword-form,
+.resetpassword-form {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  width: 490px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: white;
+}
+.login-message,
+.forgot-message,
+.reset-message {
+  top: 30%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  width: 490px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.login-form h1 {
+  text-align: center;
+}
+.login-form form {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.login-form input,
+.forgotpassword-form input,
+.resetpassword-form input {
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 5px 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 0.5px 0.5px rgb(146, 146, 146);
+}
+.login-form input:focus {
+  box-shadow: 0px 0px 1px 1px var(--main-font-color);
+}
+.login-form p {
+  text-align: center;
+  margin: 5px 0;
+}
+.login-form p a {
+  text-decoration: none;
+  color: var(--main-font-color);
+}
+.login-form button,
+.forgotpassword-form button,
+.resetpassword-form button {
+  font-size: 1rem;
+  padding: 5px 25px;
+  color: white;
+  background-color: var(--main-font-color);
+  border: none;
+  outline: none;
+  color: white;
+  margin-bottom: 10px;
+}
+.login-form button:hover,
+.forgotpassword-form button:hover,
+.resetpassword-form button:hover {
+  background-color: rgb(68, 68, 170);
+}
+@media screen and (max-width: 600px) {
+  .login-form,
+  .forgotpassword-form,
+  .resetpassword-form {
+    padding: 1rem;
+    width: 90vw;
+  }
+  .login-message,
+  .forgot-message,
+  .reser-message {
+    width: 90%;
+    margin: 0rem;
+    font-size: 0.9rem;
+  }
+  .login-form input,
+  .forgotpassword-form input,
+  .resetpassword-form input {
+    font-size: 0.9rem;
+    padding: 5px 1rem;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 0.5px 0.5px rgb(146, 146, 146);
+  }
+  .login-form p,
+  .forgotpassword-form p,
+  .resetpassword-form p {
+    font-size: 0.8rem;
+  }
+  .login-form button,
+  .forgotpassword-form button,
+  .resetpassword-form button {
+    font-size: 0.9rem;
+  }
+}
