@@ -18,7 +18,7 @@ const SellForm = ()=>{
         formData.append("image",imageFile)
         try
         {
-        const response = await axios.post("/api/v1/product/uploadImage",formData,{
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/product/uploadImage",formData,{
             "Content-Type":"multipart/form-data"
         })
         setImage([...image,response.data.image.src])
@@ -39,7 +39,7 @@ const SellForm = ()=>{
         try
         {
         setLoading(true)
-        const response = await axios.post("/api/v1/product",formData)
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/product",formData)
         setImage([])
         setMessage({msg:"Product is Posted",type:"success"})
         setLoading(false)

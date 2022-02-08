@@ -15,12 +15,12 @@ const CallLater = ()=>{
         try
         {
         setLoading(true)
-        const responseForUser = await axios.get("/api/v1/auth/user")
+        const responseForUser = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/user")
         setUser([responseForUser.data.user])
-        const callLaterResponse = await axios.get("/api/v1/call")
+        const callLaterResponse = await axios.get("https://emptycloset.herokuapp.com/api/v1/call")
         if(callLaterResponse.data.callLater === null)
         {
-            const createCallLater = await axios.post("/api/v1/call")
+            const createCallLater = await axios.post("https://emptycloset.herokuapp.com/api/v1/call")
             setCallLater(createCallLater.data.callLater)
              setLoading(false)
             return;
@@ -37,7 +37,7 @@ const CallLater = ()=>{
     const handleCallLaterDelete = async (id)=>{
         try
         {
-        const response = await axios.patch(`/api/v1/call/${id}`)
+        const response = await axios.patch(`https://emptycloset.herokuapp.com/api/v1/call/${id}`)
         setItemCount(itemCount-1)
         setCallLater({...callLater,items:callLater.items.filter((item)=>item._id !== id)})
         }
