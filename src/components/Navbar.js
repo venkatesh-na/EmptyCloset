@@ -11,7 +11,7 @@ const NavBar = ()=>{
     const [sidebar,setSidebar] = useState(false)
     const navigate = useNavigate()
     const handleLogout = async (e)=>{
-        const data = await axios.get("/api/v1/auth/logout")
+        const data = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/logout")
         setUser(null)
         navigate("/")
     }
@@ -37,10 +37,10 @@ const NavBar = ()=>{
     const fetchCallLater = async ()=>{
         try
         {
-         const callLaterResponse = await axios.get("/api/v1/call")
+         const callLaterResponse = await axios.get("https://emptycloset.herokuapp.com/api/v1/call")
          if(callLaterResponse.data.callLater == null)
          {
-            const response = await axios.post("/api/v1/call")
+            const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/call")
             setItemCount(response.data.callLater.totalItem)
             return;
         }

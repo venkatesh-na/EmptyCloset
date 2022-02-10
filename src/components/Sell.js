@@ -19,8 +19,8 @@ const Sell = ()=>{
         try
         {
         setLoading(true)
-        const responseForUser = await axios.get("/api/v1/auth/user")
-        const responseForProduct = await axios.get("/api/v1/product/getUserProducts")
+        const responseForUser = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/user")
+        const responseForProduct = await axios.get("https://emptycloset.herokuapp.com/api/v1/product/getUserProducts")
         setUser([responseForUser.data.user])
         setUserProducts(responseForProduct.data.products)
         setLoading(false)
@@ -42,8 +42,8 @@ const Sell = ()=>{
     const handleProductDelete = async (productId)=>{
         try
         {
-            const response = await axios.delete(`/api/v1/product/${productId}`)
-            const callResponse = await axios.get(`/api/v1/call`)
+            const response = await axios.delete(`https://emptycloset.herokuapp.com/api/v1/product/${productId}`)
+            const callResponse = await axios.get(`https://emptycloset.herokuapp.com/api/v1/call`)
             setItemCount(callResponse.data.callLater.totalItem)
             setUserProducts(userProducts.filter(item=>item._id !== productId))
         }

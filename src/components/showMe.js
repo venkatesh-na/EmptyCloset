@@ -32,11 +32,11 @@ const [checked,setChecked] = useState({one:false,two:false,three:false,four:fals
         try
         {
         setLoading(true)
-        const userResponse = await axios.get("/api/v1/auth/user")
-        const productResponse = await axios.get("/api/v1/product")
+        const userResponse = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/user")
+        const productResponse = await axios.get("https://emptycloset.herokuapp.com/api/v1/product")
         if(productResponse.data.product.length > 0)
         {
-        const maxPriceResponse = await axios.get("/api/v1/product/findMaxPrice")
+        const maxPriceResponse = await axios.get("https://emptycloset.herokuapp.com/api/v1/product/findMaxPrice")
         setMaxPrice(maxPriceResponse.data.maxPrice)
         }
         setUser([{...userResponse.data.user}])
@@ -78,7 +78,7 @@ const [checked,setChecked] = useState({one:false,two:false,three:false,four:fals
     const fetchProductByQuery = async ()=>{
         try
         {
-         const products = await axios.get(`/api/v1/product?name=${query.name}&brand=${query.brand}&category=${query.category}&sort=${query.sort}&numericFilter=${query.priceFilter}${query.ratingFilter}`)
+         const products = await axios.get(`https://emptycloset.herokuapp.com/api/v1/product?name=${query.name}&brand=${query.brand}&category=${query.category}&sort=${query.sort}&numericFilter=${query.priceFilter}${query.ratingFilter}`)
         setProducts(products.data.product)
         }
         catch(er)

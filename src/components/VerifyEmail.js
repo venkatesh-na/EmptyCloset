@@ -14,7 +14,7 @@ const VerifyEmail = ()=>{
         try
         {
             setLoading(true)
-            const response = await axios.post(`/api/v1/auth/verify-email`,
+            const response = await axios.post(`https://emptycloset.herokuapp.com/api/v1/auth/verify-email`,  
             {
                 token:query.get("token"),
                  email:query.get("email")

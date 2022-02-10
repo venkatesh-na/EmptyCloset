@@ -11,7 +11,7 @@ const ForgotPassword = ()=>{
         {
         setLoading(true)
         e.preventDefault()
-        const response = await axios.post("/api/v1/auth/forgot-password",{ email })
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/auth/forgot-password",{ email })
         setEmail("")
         setLoading(false)
         setMessage({msg:response.data.msg,type:"success"})

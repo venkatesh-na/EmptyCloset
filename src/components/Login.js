@@ -12,7 +12,7 @@ const Login = ()=>{
         {
             e.preventDefault()
             setLoading(true)
-            const response = await axios.post("/api/v1/auth/login",value
+            const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/auth/login",value
                 )
             setLoading(false)
             console.log(response)
