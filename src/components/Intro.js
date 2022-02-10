@@ -13,7 +13,7 @@ const Intro = ()=>{
         try
         {
             setLoading(true)
-        const response = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/user")
+        const response = await axios.get("/api/v1/auth/user")
         setUser([{...response.data.user}])
         setLoading(false)
         }
