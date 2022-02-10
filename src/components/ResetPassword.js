@@ -15,7 +15,7 @@ const ResetPassword = ()=>{
         {
         setLoading(true)
         e.preventDefault()
-        const response = await axios.post("/api/v1/auth/reset-password",{ token:query.get("token"), email:query.get("email"), password })
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/auth/reset-password",{ token:query.get("token"), email:query.get("email"), password })
         setPassword("")
         setLoading(false)
         setMessage({msg:response.data.msg,type:"success"})

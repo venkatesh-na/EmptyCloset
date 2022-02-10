@@ -19,7 +19,7 @@ const EditSellForm = ()=>{
         formData.append("image",imageFile)
         try
         {
-        const response = await axios.post("/api/v1/product/uploadImage",formData,{
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/product/uploadImage",formData,{
             "Content-Type":"multipart/form-data"
         })
         setImage([...image,response.data.image.src])
@@ -35,7 +35,7 @@ const EditSellForm = ()=>{
         try
         {
         setLoading(true)
-        const response = await axios.get(`/api/v1/product/${id}`)
+        const response = await axios.get(`https://emptycloset.herokuapp.com/api/v1/product/${id}`)
         const { name, brand, images,category, description,price, location, phoneNo } = response.data.product
         setFormData({name,brand,images,category,description,price,location,phoneNo})
         setLoading(false)
@@ -59,7 +59,7 @@ const EditSellForm = ()=>{
         try
         {
         setLoading(true)
-        const response = await axios.patch(`/api/v1/product/${id}`,formData)
+        const response = await axios.patch(`https://emptycloset.herokuapp.com/api/v1/product/${id}`,formData)
         setImage([])
         setMessage({msg:"Product Updated",type:"success"})
         window.scrollTo(0,0)

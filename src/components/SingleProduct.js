@@ -23,7 +23,7 @@ const SingleProduct = ({match})=>{
     const fetchUser = async ()=>{
         try
         {
-        const response = await axios.get("/api/v1/auth/user")
+        const response = await axios.get("https://emptycloset.herokuapp.com/api/v1/auth/user")
         setUser([{...response.data.user}])
         }
         catch(err)
@@ -35,8 +35,8 @@ const SingleProduct = ({match})=>{
         try
         {
         setLoading(true)
-        const response = await axios.get(`/api/v1/product/${id}`)
-        const reviewResponse = await axios.get(`/api/v1/review/${response.data.product._id}`)
+        const response = await axios.get(`https://emptycloset.herokuapp.com/api/v1/product/${id}`)
+        const reviewResponse = await axios.get(`https://emptycloset.herokuapp.com/api/v1/review/${response.data.product._id}`)
         setProduct([{...response.data.product}])
         setReviews(reviewResponse.data.reviews)
         setLoading(false)
@@ -60,7 +60,7 @@ const SingleProduct = ({match})=>{
         try
         {
         setReviewLoading(true)
-        const response = await axios.post("/api/v1/review",{rating:rating.rate, comment:rating.comment ,product:id})
+        const response = await axios.post("https://emptycloset.herokuapp.com/api/v1/review",{rating:rating.rate, comment:rating.comment ,product:id})
         setMessage({msg:response.data.msg,type:"success"})
         setRating({rate:0,comment:""})
         setMessage(null)
@@ -79,7 +79,7 @@ const SingleProduct = ({match})=>{
     const handleDeleteReview = async (reviewId)=>{
         try
         {
-        const response = await axios.delete(`/api/v1/review/${reviewId}`)
+        const response = await axios.delete(`https://emptycloset.herokuapp.com/api/v1/review/${reviewId}`)
         setReviews(reviews.filter(review=>review._id !== reviewId))
         }
         catch(err)
@@ -90,7 +90,7 @@ const SingleProduct = ({match})=>{
     const handleCallLater = async (productId)=>{
         try
         {
-        const callResponse = await axios.patch(`/api/v1/call`,{productId})
+        const callResponse = await axios.patch(`https://emptycloset.herokuapp.com/api/v1/call`,{productId})
         setItemCount(itemCount+1)
         }
         catch(err)
