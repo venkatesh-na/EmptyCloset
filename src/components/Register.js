@@ -11,7 +11,7 @@ const Register = ()=>{
         try
         {
             setLoading(true)
-            const response = await axios.post(`https://emptycloset.herokuapp.com/api/v1/auth/register`,value)
+            const response = await axios.post(`/api/v1/auth/register`,value)
             setValues({firstName:"",lastName:"",loading:"",email:"",password:""})
             setLoading(false)
             setMessage({msg:response.data.msg,type:"success"})
